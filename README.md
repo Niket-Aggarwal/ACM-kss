@@ -12,4 +12,4 @@ all images used in kss are in kssimagesfolder
 Form and Timetable are the two html file of html kss assignment in this i have added style also as it is short so no other file is used.
 <br>
 # 2
-Both CSS .html and .css is the kss assignment of CSS lecture. The images used in it given in folder(img.jpg,logo.jpg)
+Both CSS .html and .css is the kss assignment of CSS lecture. The images used in it given in folder(css.img.jpg,css.logo.jpg)
