@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What you know</title>
+    <style>
+        body{
+            background-image: linear-gradient(to left, rgb(230, 151, 151), rgb(243, 171, 36));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            background: linear-gradient(45deg,red,orange);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            width: 500px;
+            text-align: center;
+        }
+        h2{
+            color: #333;
+        }
+        label{
+            font-size: 25px;
+            color: #10bce7d0;
+        }
+        input[type="text"]{
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            outline: none;
+        }
+        input[type="text"]:focus{
+            border-color: #5563DE;
+            box-shadow: 0 0 6px #5563DE;
+        }
+        input[type="checkbox"],input[type="radio"]{
+            margin: 8px 4px;
+            cursor: pointer;
+            color: #5563DE;
+        }
+        input[type="submit"]{
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #5563DE;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type="submit"]:hover{
+            background: #3948B7;
+            transform: scale(1.1);
+        }
+        div{
+            display: flex;
+            flex-direction: column; 
+            margin-bottom: 5px;
+        }
+        .option{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+</style>
+</head>
+<body>
+    <form id="Fun">
+        <h2>I want to know How much you know about me</h2>
+        <label for="nickname">Acc. to you what is my nickname?</label>
+        <br>
+        <input id="name" type="text" placeholder="NickName" required>
+        <br>
+        <label for="favfood">Acc. to you what is my fav food?</label>
+        <br>
+        <input id="food" type="text" placeholder="FavFood" required>
+        <br>
+        <div>
+            <label for="personality">Acc. to you what is my personality</label>
+            <br>
+            <div class="option">
+            <span><input class="per" type="checkbox" value="Wired"><label>Wired</label></span>
+            <span><input class="per" type="checkbox" value="Funny"><label>Funny</label></span>
+            <span><input class="per" type="checkbox" value="OpenMind"><label>OpenMind</label></span>
+            <span><input class="per" type="checkbox" value="Rude"><label>Rude</label></span>
+            </div>
+        </div>
+        <div>
+            <label for="Rate">Rate me</label>
+            <br>
+            <div class="option">
+            <span><input type="radio" name="rate" value="1"><label>1</label></span>
+            <span><input type="radio" name="rate" value="2"><label>2</label></span>
+            <span><input type="radio" name="rate" value="3"><label>3</label></span>
+            <span><input type="radio" name="rate" value="4"><label>4</label></span>
+            <span><input type="radio" name="rate" value="5"><label>5</label></span>
+            </div>
+        </div>
+        <br>
+        <input type="submit">
+    </form>
+    <script>
+        const name = document.getElementById('name');
+        name.addEventListener('click', () => {
+            alert('If you Enter my correct Nickname you will get A TREAT');
+        });
+        const food = document.getElementById('food');
+        food.addEventListener('click', () => {
+            alert('I am foody every food i love');
+        });
+        const form=document.getElementById('Fun');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const checkboxes = document.querySelectorAll('input[class="per"]');
+            const check= [];
+            for(let i=0;i<checkboxes.length;i++){
+                if(checkboxes[i].checked){
+                    check.push(checkboxes[i].value);
+                }
+            }
+            const radios = document.querySelectorAll('input[name="rate"]');
+            let radiobtn = null;
+            for(let i=0;i<radios.length;i++){
+                if(radios[i].checked){
+                    radiobtn=radios[i].value;
+                }
+            }
+            const data = {
+                name: document.getElementById('name').value,
+                food: document.getElementById('food').value,
+                personality: check,
+                rate: radiobtn
+            };
+        form.reset()
+        console.log(data);
+        });
+    </script>
+</body>
+</html>
