@@ -8,7 +8,7 @@ Hope to build connection and learns many skills in this journey.
 <br>
 ## Note
 all images used in kss are in kssimagesfolder
-## 1th
+## 1st
 Fun Form and Timetable of class are the two html file of html kss assignment in this i have added style also as it is short so no other file is used.
 <br>
 ## 2nd
